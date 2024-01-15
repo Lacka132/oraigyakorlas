@@ -1,4 +1,13 @@
-﻿struct Hivasok
+﻿string[] input = File.ReadAllLines("hivasok.txt");
+List<Hivasok> data = new List<Hivasok>();
+for (int i = 0; i < input.Length; i = i + 2)
+{
+    data.Add(new Hivasok(input[i], input[i + 1]));
+        
+}
+Console.WriteLine($"A hivasok szama:{ data.Count}");
+
+struct Hivasok
 {
     public int kora;
     public int kperc;
